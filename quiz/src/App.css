@@ -1,7 +1,120 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }
 body {
-  background-color: black;
+  background-color: #882ff6;
   color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.title {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 68px;
+  margin-top: 15px;
+  line-height: 110%;
+}
+
+.subheading {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 48px;
+  margin-top: -50px;
+  color: #f9e105;
+}
+
+.card_selection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #36b7f6;
+  padding: 20px;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 16px;
+}
+
+.card_packs {
+  background-color: #f99d07;
+  height: 200px;
+  width: 140px;
+  border-radius: 16px;
+  color: white;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  margin: 20px;
+}
+
+.pack_name {
+  color: black;
+  padding-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.pack_info {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card {
+  width: 70%;
+  height: 500px;
+  background-color: rgb(243, 243, 228);
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.problem {
+  font-size: 68px;
+  color: black;
+  padding-top: 30px;
+}
+
+.line {
+  font-size: 48px;
+  color: black;
+  margin-top: -30px
+}
+
+.solution {
+  font-size: 108px;
+  color: #36b7f6;
+  font-family: 'Gloria Hallelujah', cursive;
+  margin-top: -45px;
+}
+
+.start {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-color: #36d460;
+  color: white;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.show {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-color: #f9e105;
+  color: black;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.back {
+  font-size: 24px;
+  margin-top: 20px;
 }

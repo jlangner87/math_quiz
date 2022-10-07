@@ -1,90 +1,23 @@
 import './App.css'
+import React from 'react'
 import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './Home'
+import AddSubtract from './AddSubtract'
+import AddSubtract2 from './AddSubtract2'
+import Multiplication from './Multiplication'
+import Multiplication2 from './Multiply2'
 
 function App() {
-  const [firstInt, setFirstInt] = useState(' ')
-  const [secondInt, setSecondInt] = useState(' ')
-  const [operator, setOperator] = useState(' ')
-  const [hiddenSolution, setHiddenSolution] = useState('')
-  const [solution, setSolution] = useState('?')
-  const [answer, setAnswer] = useState('')
-  const [message, setMessage] = useState('')
-
-  const createProblem = () => {
-    let intOne = Math.floor(Math.random() * 111)
-    let intTwo = Math.floor(Math.random() * 11)
-    let op = Math.floor(Math.random() * 2)
-    if (op === 0) {
-      setOperator('+')
-    } else setOperator('-')
-    setFirstInt(intOne)
-    if (intTwo > intOne && op === 1) {
-      createProblem()
-    } else setSecondInt(intTwo)
-    setSolution('?')
-  }
-
-  const handleChange = (e) => {
-    let input = parseInt(e.target.value)
-    setAnswer(input)
-  }
-
-  const nextProblem = () => {
-    createProblem()
-    setSolution('?')
-    setAnswer('')
-    setMessage('')
-  }
-
-  const showSolution = () => {
-    let sum = firstInt + secondInt
-    let dif = firstInt - secondInt
-    if (operator === '+') {
-      setSolution(sum)
-    } else setSolution(dif)
-  }
-
-  const checkAnswer = () => {
-    let sum = firstInt + secondInt
-    let dif = firstInt - secondInt
-    if (operator === '+') {
-      setHiddenSolution(sum)
-    } else setHiddenSolution(dif)
-  }
-
-  const outcomeMessage = () => {
-    if (hiddenSolution === answer) {
-      setMessage(`yass`)
-    } else setMessage(`faaahh`)
-  }
-
-  const fireBoth = () => {
-    checkAnswer()
-    outcomeMessage()
-  }
-
   return (
     <div className="App">
-      <button onClick={createProblem}>START</button>
-      <h1>
-        {firstInt} {operator} {secondInt} = {solution}
-      </h1>
-      <label>Your Answer: </label>
-      <input
-        type="number"
-        id="answer"
-        name="answer"
-        onChange={handleChange}
-        value={answer}
-      />
-      <br />
-      <br />
-      <button onClick={fireBoth}>CHECK ANSWER</button>
-      <button onClick={showSolution}>SHOW ANSWER</button>
-      <br />
-      <h1>{message}</h1>
-
-      <button onClick={nextProblem}>NEXT</button>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="add_subtract_1" element={<AddSubtract />} />
+        <Route path="add_subtract_2" element={<AddSubtract2 />} />
+        <Route path="multiply_1" element={<Multiplication />} />
+        <Route path="multiply_2" element={<Multiplication2 />} />
+      </Routes>
     </div>
   )
 }
