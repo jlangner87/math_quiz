@@ -8,7 +8,7 @@ function Multiplication() {
 
   const createProblem = () => {
     let intOne = Math.floor(Math.random() * 11)
-    let intTwo = Math.floor(Math.random() * 11)
+    let intTwo = Math.floor(Math.random() * 101)
     setFirstInt(intOne)
     setSecondInt(intTwo)
     setSolution('?')
@@ -24,7 +24,7 @@ function Multiplication() {
       <h1 className="title">
         Multiply
         <br />
-        Numbers 1-10
+        Big Numbers
       </h1>
       <div className="card">
         <h1 className="problem">

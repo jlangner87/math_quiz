@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function Multiplication2() {
+function Multiplication10() {
   const [firstInt, setFirstInt] = useState("LET'S")
   const [secondInt, setSecondInt] = useState('MULTIPLY')
   const [solution, setSolution] = useState('?')
 
   const createProblem = () => {
     let intOne = Math.floor(Math.random() * 12)
-    let intTwo = 2
+    let intTwo = 10
     setFirstInt(intOne)
     setSecondInt(intTwo)
     setSolution('?')
@@ -24,7 +24,7 @@ function Multiplication2() {
       <h1 className="title">
         Multiply
         <br />
-        Numbers by 2
+        Numbers by 10
       </h1>
       <div className="card">
         <h1 className="problem">
@@ -49,4 +49,4 @@ function Multiplication2() {
   )
 }
 
-export default Multiplication2
+export default Multiplication10

@@ -9,7 +9,7 @@ function AddSubtract2() {
 
   const createProblem = () => {
     let intOne = Math.floor(Math.random() * 101)
-    let intTwo = Math.floor(Math.random() * 101)
+    let intTwo = Math.floor(Math.random() * 11)
     let op = Math.floor(Math.random() * 2)
     if (op === 0) {
       setOperator('+')

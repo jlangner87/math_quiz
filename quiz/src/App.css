@@ -35,7 +35,7 @@ a:visited {
 
 .card_selection {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: #36b7f6;
@@ -44,6 +44,14 @@ a:visited {
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   border-radius: 16px;
 }
+
+.category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 
 .card_packs {
   background-color: #f99d07;
@@ -56,15 +64,38 @@ a:visited {
   margin: 20px;
 }
 
-.pack_name {
-  color: black;
-  padding-top: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+.card_packs_add {
+  background-color: #36d460;
+  height: 200px;
+  width: 140px;
+  border-radius: 16px;
+  color: white;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  margin: 20px;
 }
+
 .pack_info {
+  font-size: 18px;
+  padding-top: 40px;
   color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
 }
+
+.pack_info2 {
+  font-size: 18px;
+  margin-top: -10px;
+  color: black;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.pack_info3 {
+  font-size: 18px;
+  margin-top: 15px;
+  color: black;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
 .card {
   width: 70%;
   height: 500px;
@@ -102,6 +133,9 @@ a:visited {
   color: white;
   font-size: 24px;
   margin: 10px;
+  box-shadow: 5px 4px 6px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 5px 4px 6px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 4px 6px -1px rgba(0,0,0,0.75);
 }
 
 .show {
@@ -112,9 +146,66 @@ a:visited {
   color: black;
   font-size: 24px;
   margin: 10px;
+  box-shadow: 5px 4px 6px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 5px 4px 6px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 4px 6px -1px rgba(0,0,0,0.75);
+}
+
+.start:active {
+  box-shadow: none;
+}
+.show:active {
+  box-shadow: none
 }
 
 .back {
   font-size: 24px;
   margin-top: 20px;
+}
+
+@media screen, (max-width: 400px) {
+  .title {
+    font-size: 38px;
+  }
+
+  .subheading {
+    font-size: 28px;
+    padding-top: 15px;
+  }
+
+  .card_packs {
+    width: 100px;
+    height: 150px;
+  }
+
+  .card_packs_add {
+    width: 100px;
+    height: 150px;
+  }
+
+  .card {
+    width: 90%;
+    height: 400px;
+    background-color: rgb(243, 243, 228);
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 3px solid black;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  }
+
+  .problem {
+    font-size: 48px;
+    color: black;
+    padding-top: 30px;
+  }
+
+  .solution {
+    font-size: 88px;
+    margin-top: -25px;
+  }
+  
+  .pack_info {
+    font-size: 18px;
+    font-family: 'Gloria Hallelujah', cursive;
+  }
 }

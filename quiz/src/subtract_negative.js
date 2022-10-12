@@ -1,34 +1,35 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function Multiplication2() {
+function NegativeSubtract() {
   const [firstInt, setFirstInt] = useState("LET'S")
-  const [secondInt, setSecondInt] = useState('MULTIPLY')
+  const [secondInt, setSecondInt] = useState('SUBTRACT!')
   const [solution, setSolution] = useState('?')
 
   const createProblem = () => {
-    let intOne = Math.floor(Math.random() * 12)
-    let intTwo = 2
+    let intOne = Math.floor(Math.random() * 101)
+    let intTwo = Math.floor(Math.random() * 11)
     setFirstInt(intOne)
-    setSecondInt(intTwo)
+    if (intTwo <= intOne) {
+      createProblem()
+    } else setSecondInt(intTwo)
     setSolution('?')
   }
 
   const showSolution = () => {
-    let product = firstInt * secondInt
-    setSolution(product)
+    setSolution(firstInt - secondInt)
   }
 
   return (
     <div className="App">
       <h1 className="title">
-        Multiply
+        Subtract
         <br />
-        Numbers by 2
+        Negatives
       </h1>
       <div className="card">
         <h1 className="problem">
-          {firstInt} ✕ {secondInt}
+          {firstInt} - {secondInt}
         </h1>
         <h1 className="line">__________</h1>
         <h1 className="solution"> {solution}</h1>
@@ -41,12 +42,13 @@ function Multiplication2() {
         <button className="show" onClick={showSolution}>
           SHOW ANSWER
         </button>
-      </div>
-      <div className="back">
-        <Link to="/">⬅️ Back to Card Packs</Link>
+        <br />
+        <div className="back">
+          <Link to="/">⬅️ Back to Card Packs</Link>
+        </div>
       </div>
     </div>
   )
 }
 
-export default Multiplication2
+export default NegativeSubtract
